@@ -2,6 +2,7 @@
   "name": "w3ch1",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "prebuild": "rimraf dist/",
     "build": "parcel build src/index.html",

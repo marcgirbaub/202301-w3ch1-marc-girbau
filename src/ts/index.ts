@@ -1,46 +1,52 @@
 import { Advisor } from "./Advisor/Advisor";
 import { characters } from "./character";
 import { Character } from "./Character/Character";
+import { CardComponent } from "./components/CardComponent/CardComponent";
 import { ListElementComponent } from "./components/ListElementComponent/ListElementComponent";
 import { UnorderedListComponent } from "./components/UnorderedListComponent/UnorderedListComponent";
 import { Fighter } from "./Figther/Figther";
 import { King } from "./King/King";
 import { Squire } from "./Squire/Squire";
 import { type CharacterDataStructure } from "./types/types";
+import joffreyImage from "../img/joffrey.jpg";
+import bronnImage from "../img/bronn.jpg";
+import daenerysImage from "../img/daenerys.jpg";
+import jaimeImage from "../img/jaime.jpg";
+import tyrionImage from "../img/tyrion.jpg";
 
 const joffreyData: CharacterDataStructure = {
   name: "Joffrey",
   family: "Baratheon",
   age: 16,
-  imageSource: "../img/joffrey.jpg",
+  imageSource: String(joffreyImage),
 };
 
 const jaimeData: CharacterDataStructure = {
   name: "Jaime",
   family: "Lannister",
   age: 45,
-  imageSource: "../img/jaime.jpg",
+  imageSource: String(jaimeImage),
 };
 
 const daeneryseData: CharacterDataStructure = {
   name: "Daenerys",
   family: "Targaryen",
   age: 30,
-  imageSource: "../img/daenerys.jpg",
+  imageSource: String(daenerysImage),
 };
 
 const tyrionData: CharacterDataStructure = {
   name: "Tyrion",
   family: "Lannister",
   age: 40,
-  imageSource: "../img/tyrion.jpg",
+  imageSource: String(tyrionImage),
 };
 
 const bronnData: CharacterDataStructure = {
   name: "Bronn",
   family: "Blackwater",
   age: 54,
-  imageSource: "../img/bronn.jpg",
+  imageSource: String(bronnImage),
 };
 
 export const joffrey: King = new King(joffreyData, 2);
@@ -57,9 +63,18 @@ unorderedList.classList.add("row");
 unorderedList.classList.add("list-unstyled");
 
 const listElement: Element = document.createElement("li");
-listElement.classList.add("characters-list");
-listElement.classList.add("row");
+listElement.classList.add("character");
+listElement.classList.add("col");
 
 unorderedList.appendChild(listElement);
 
 appContainerEl.appendChild(unorderedList);
+
+const joffreyCard = new CardComponent(
+  "div",
+  listElement,
+  "card character__card",
+  joffrey
+);
+
+const joffreyCardElement = joffreyCard.element;

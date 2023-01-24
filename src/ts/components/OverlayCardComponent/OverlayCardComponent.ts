@@ -22,7 +22,7 @@ export class OverlayCardComponent extends Component {
     if (this.character instanceof King) {
       this.element.innerHTML = `
               <ul class="list-unstyled">
-                <li>Years of Reign: ${this.character.yearsOfReign}X</li>
+                <li>Years of Reign: ${this.character.yearsOfReign}</li>
               </ul>
               <div class="character__actions">
                 <button class="character__action btn">speak</button>

@@ -21,7 +21,7 @@ export class CardComponent extends Component implements CardComponentStructure {
 
     const image = new ImageComponent(
       this.element,
-      "character-picture",
+      "character__picture card-img-top",
       character
     );
 

@@ -2,8 +2,6 @@ import { Advisor } from "./Advisor/Advisor";
 import { characters } from "./character";
 import { Character } from "./Character/Character";
 import { CardComponent } from "./components/CardComponent/CardComponent";
-import { ListElementComponent } from "./components/ListElementComponent/ListElementComponent";
-import { UnorderedListComponent } from "./components/UnorderedListComponent/UnorderedListComponent";
 import { Fighter } from "./Figther/Figther";
 import { King } from "./King/King";
 import { Squire } from "./Squire/Squire";
@@ -59,37 +57,30 @@ export const bronn = new Squire(bronnData, 0, jaime);
 const appContainerEl = document.querySelector(".app")!;
 
 const unorderedList: Element = document.createElement("ul");
-unorderedList.classList.add("characters-list");
-unorderedList.classList.add("row");
-unorderedList.classList.add("list-unstyled");
+unorderedList.className = "characters-list row list-unstyled";
 
 const listElement: Element = document.createElement("li");
-listElement.classList.add("character");
-listElement.classList.add("col");
+listElement.className = "character col";
 
 unorderedList.appendChild(listElement);
 
 const listElementSecond: Element = document.createElement("li");
-listElementSecond.classList.add("character");
-listElementSecond.classList.add("col");
+listElementSecond.className = "character col";
 
 unorderedList.appendChild(listElementSecond);
 
 const listElementThird: Element = document.createElement("li");
-listElementThird.classList.add("character");
-listElementThird.classList.add("col");
+listElementThird.className = "character col";
 
 unorderedList.appendChild(listElementThird);
 
 const listElementFourth: Element = document.createElement("li");
-listElementFourth.classList.add("character");
-listElementFourth.classList.add("col");
+listElementFourth.className = "character col";
 
 unorderedList.appendChild(listElementFourth);
 
 const listElementFifth: Element = document.createElement("li");
-listElementFifth.classList.add("character");
-listElementFifth.classList.add("col");
+listElementFifth.className = "character col";
 
 unorderedList.appendChild(listElementFifth);
 

@@ -1,4 +1,4 @@
-interface ComponentStructure {
+export interface ComponentStructure {
   element: Element;
 
   render: () => void;

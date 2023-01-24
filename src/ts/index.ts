@@ -1,5 +1,8 @@
 import { Advisor } from "./Advisor/Advisor";
-import { ListComponent } from "./components/ListComponent/ListComponent";
+import { characters } from "./character";
+import { Character } from "./Character/Character";
+import { ListElementComponent } from "./components/ListElementComponent/ListElementComponent";
+import { UnorderedListComponent } from "./components/UnorderedListComponent/UnorderedListComponent";
 import { Fighter } from "./Figther/Figther";
 import { King } from "./King/King";
 import { Squire } from "./Squire/Squire";
@@ -48,8 +51,8 @@ export const bronn = new Squire(bronnData, 0, jaime);
 
 const appContainerEl = document.querySelector(".app")!;
 
-const charactersListElement = new ListComponent(
+const unorderedList = new UnorderedListComponent(
   "ul",
   appContainerEl,
-  "characters-list"
-);
+  "characters-list row list-untyled"
+)!;

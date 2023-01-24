@@ -10,6 +10,8 @@ interface CardComponentStructure {
 }
 
 export class CardComponent extends Component implements CardComponentStructure {
+  image: Element;
+
   constructor(
     tagName: string,
     parentElement: Element,
@@ -26,10 +28,16 @@ export class CardComponent extends Component implements CardComponentStructure {
       character
     );
 
+    this.image = image.element;
+
     const body = new CardBodyComponent(this.element, character);
 
     const emoji = new EmojiComponent(this.element, character);
 
-    const overlay = new OverlayCardComponent(this.element, character);
+    const overlay = new OverlayCardComponent(
+      this.element,
+      character,
+      this.image
+    );
   }
 }

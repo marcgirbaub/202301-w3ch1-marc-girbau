@@ -99,3 +99,7 @@ body {
   right: 5px;
   top: 5px;
 }
+
+.dead {
+  transform: scale(-1, -1);
+}

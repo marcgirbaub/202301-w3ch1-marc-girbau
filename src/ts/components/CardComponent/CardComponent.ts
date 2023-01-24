@@ -1,4 +1,5 @@
 import { type Character } from "../../Character/Character";
+import { CardBodyComponent } from "../CardBodyComponent/CardBodyComponent";
 import { Component } from "../Component/Component";
 import { ImageComponent } from "../ImageComponent/ImageComponent";
 
@@ -23,6 +24,6 @@ export class CardComponent extends Component implements CardComponentStructure {
       character
     );
 
-    this.element.appendChild(image.element);
+    const body = new CardBodyComponent(this.element, character);
   }
 }

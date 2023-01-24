@@ -2,6 +2,7 @@ import { type Character } from "../../Character/Character";
 import { CardBodyComponent } from "../CardBodyComponent/CardBodyComponent";
 import { Component } from "../Component/Component";
 import { ImageComponent } from "../ImageComponent/ImageComponent";
+import { OverlayCardComponent } from "../OverlayCardComponent/OverlayCardComponent";
 
 interface CardComponentStructure {
   element: Element;
@@ -25,5 +26,7 @@ export class CardComponent extends Component implements CardComponentStructure {
     );
 
     const body = new CardBodyComponent(this.element, character);
+
+    const overlay = new OverlayCardComponent(this.element, character);
   }
 }

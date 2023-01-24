@@ -51,8 +51,15 @@ export const bronn = new Squire(bronnData, 0, jaime);
 
 const appContainerEl = document.querySelector(".app")!;
 
-const unorderedList = new UnorderedListComponent(
-  "ul",
-  appContainerEl,
-  "characters-list row list-untyled"
-)!;
+const unorderedList: Element = document.createElement("ul");
+unorderedList.classList.add("characters-list");
+unorderedList.classList.add("row");
+unorderedList.classList.add("list-unstyled");
+
+const listElement: Element = document.createElement("li");
+listElement.classList.add("characters-list");
+listElement.classList.add("row");
+
+unorderedList.appendChild(listElement);
+
+appContainerEl.appendChild(unorderedList);

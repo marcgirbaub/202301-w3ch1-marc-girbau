@@ -5,6 +5,10 @@ export class ImageComponent extends Component {
   constructor(parentElement: Element, className: string, character: Character) {
     super("img", parentElement, className);
 
+    (
+      this.element as HTMLImageElement
+    ).alt = `${character.characterData.name} ${character.characterData.family}`;
+
     (this.element as HTMLImageElement).src =
       character.characterData.imageSource;
   }

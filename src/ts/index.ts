@@ -1,9 +1,5 @@
 import { Advisor } from "./Advisor/Advisor";
-import { characters } from "./character";
-import { Character } from "./Character/Character";
 import { CardComponent } from "./components/CardComponent/CardComponent";
-import { ListElementComponent } from "./components/ListElementComponent/ListElementComponent";
-import { UnorderedListComponent } from "./components/UnorderedListComponent/UnorderedListComponent";
 import { Fighter } from "./Figther/Figther";
 import { King } from "./King/King";
 import { Squire } from "./Squire/Squire";

@@ -8,7 +8,7 @@ import { Advisor } from "../../Advisor/Advisor";
 export class OverlayCardComponent extends Component {
   character: Character;
 
-  constructor(parentElement: Element, charachter: Character) {
+  constructor(parentElement: Element, charachter: Character, image: Element) {
     super("div", parentElement, "character__overlay");
 
     this.character = charachter;
@@ -16,6 +16,7 @@ export class OverlayCardComponent extends Component {
     parentElement.appendChild(this.element);
 
     this.render();
+    this.addEventListeners(image);
   }
 
   render() {
@@ -25,8 +26,8 @@ export class OverlayCardComponent extends Component {
                 <li>Years of Reign: ${this.character.yearsOfReign}</li>
               </ul>
               <div class="character__actions">
-                <button class="character__action btn">speak</button>
-                <button class="character__action btn">die</button>
+                <button class="character__action btn speak">speak</button>
+                <button class="character__action btn die">die</button>
               </div>`;
     }
 
@@ -37,8 +38,8 @@ export class OverlayCardComponent extends Component {
                 <li>Dexterity: ${this.character.dexterity}</li>
               </ul>
               <div class="character__actions">
-                <button class="character__action btn">speak</button>
-                <button class="character__action btn">die</button>
+                <button class="character__action btn speak">speak</button>
+                <button class="character__action btn die">die</button>
               </div>
             `;
     }
@@ -49,8 +50,8 @@ export class OverlayCardComponent extends Component {
                 <li>Serves to: ${this.character.serves.characterData.name}</li>
               </ul>
               <div class="character__actions">
-                <button class="character__action btn">speak</button>
-                <button class="character__action btn">die</button>
+                <button class="character__action btn speak">speak</button>
+                <button class="character__action btn die">die</button>
               </div>`;
     }
 
@@ -59,9 +60,20 @@ export class OverlayCardComponent extends Component {
                 <li>Advises to:${this.character.advises.characterData.name}</li>
               </ul>
               <div class="character__actions">
-                <button class="character__action btn">speak</button>
-                <button class="character__action btn">die</button>
+                <button class="character__action btn speak">speak</button>
+                <button class="character__action btn die">die</button>
               </div>`;
     }
+  }
+
+  addEventListeners(imageComponent: Element) {
+    const dieButtonEl = document.querySelectorAll(".die")!;
+
+    dieButtonEl.forEach((buttonEl) => {
+      buttonEl.addEventListener("click", () => {
+        this.character.die();
+        imageComponent.classList.toggle("dead");
+      });
+    });
   }
 }

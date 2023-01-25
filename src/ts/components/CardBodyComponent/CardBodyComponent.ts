@@ -12,7 +12,22 @@ export class CardBodyComponent extends Component {
   }
 
   render() {
-    this.element.innerHTML = `
+    if (this.character.isAlive) {
+      this.element.innerHTML = `
+            <h2 class="character__name card-title h4">${this.character.characterData.name} ${this.character.characterData.family}</h2>
+            <div class="character__info">
+              <ul class="list-unstyled">
+                <li>Age: ${this.character.characterData.age} yrs</li>
+                <li>
+                  State:
+                  <i class="fas fa-thumbs-up"></i>
+                </li>
+              </ul>
+            </div>`;
+    }
+
+    if (!this.character.isAlive) {
+      this.element.innerHTML = `
             <h2 class="character__name card-title h4">${this.character.characterData.name} ${this.character.characterData.family}</h2>
             <div class="character__info">
               <ul class="list-unstyled">
@@ -20,9 +35,9 @@ export class CardBodyComponent extends Component {
                 <li>
                   State:
                   <i class="fas fa-thumbs-down"></i>
-                  <i class="fas fa-thumbs-up"></i>
                 </li>
               </ul>
             </div>`;
+    }
   }
 }
